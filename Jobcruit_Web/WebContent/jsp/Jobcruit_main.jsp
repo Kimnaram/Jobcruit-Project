@@ -237,7 +237,6 @@
 <h2 class="text-center">Recruit</h2>
 <div class="container-fluid bg-grey">
   <div class="row">
-  
   <c:forEach var="li" items="${list }">
     <table class="table table-hover">
     <thead>
@@ -248,27 +247,34 @@
         <th>분야1</th>
         <th>분야2</th>
         <th>분야3</th>
-        <th>경력</th>
-        <th>학력</th>
-        <th>정규직/계약직</th>
-        <th>지역</th>
-        <th>마감일</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>${li.company }</td>
-        <td>${li.title }</td>
+        <td><a href="${li.titlelink }" target="_blank" style="text-decoration:none">${li.title }</a></td>
         <td>${li.site_name }</td>
         <td>${li.field1 }</td>
         <td>${li.field2 }</td>
         <td>${li.field3 }</td>
+      </tr>
+    </tbody>
+    <thead>
+    <tr>
+        <th>경력</th>
+        <th>학력</th>
+        <th>정규직/계약직</th>
+        <th>지역</th>
+        <th>마감일</th>
+    </thead>
+    <tbody>
+    <tr>
         <td>${li.career }</td>
         <td>${li.academic }</td>
         <td>${li.workingcondition }</td>
         <td>${li.area }</td>
         <td>${li.deadline }</td>
-      </tr>
+    </tr>
     </tbody>
   </table>
   </c:forEach>
@@ -281,9 +287,9 @@
 <div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>Portfolio</h2><br>
   <div class="row text-center slideanim">
-    <div class="col-sm-4">
+    <div>
       <div class="thumbnail">
-        <img src="../images/Seo.jpg" alt="서리태" width="400" height="300">
+        <img src="../images/Seo.jpg" alt="서리태" style="width:350px; height:350px;">
         <p><strong>서리태</strong></p>
         <p>JSP, HTML, Scraping 담당</p>
       </div>
@@ -319,14 +325,11 @@
   </div>
 </div>
 
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
-
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+  <p>Jobcruit Made By <a href="https://se0r1-tae27.tistory.com/" title="Visit tistoty">서리태</a></p>
 </footer>
 
 <script>
