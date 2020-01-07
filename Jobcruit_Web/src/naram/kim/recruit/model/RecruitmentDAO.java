@@ -33,7 +33,6 @@ public class RecruitmentDAO {
 	PreparedStatement pstmt = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-	int total = 0;
 	
 	public ArrayList<RecruitmentVO> listRecruitment() {
 		
@@ -51,20 +50,21 @@ public class RecruitmentDAO {
 			
 			while(rs.next()) {
 				
-				String company = rs.getString(1);
-				String title = rs.getString(2);
-				String titlelink = rs.getString(3);
-				String site_name = rs.getString(4);
-				String field1 = rs.getString(5);
-				String field2 = rs.getString(6);
-				String field3 = rs.getString(7);
-				String career = rs.getString(8);
-				String academic = rs.getString(9);
-				String area = rs.getString(10);
-				String workingcondition = rs.getString(11);
-				String deadline = rs.getString(12);
+				int total = rs.getInt(1);
+				String company = rs.getString(2);
+				String title = rs.getString(3);
+				String titlelink = rs.getString(4);
+				String site_name = rs.getString(5);
+				String field1 = rs.getString(6);
+				String field2 = rs.getString(7);
+				String field3 = rs.getString(8);
+				String career = rs.getString(9);
+				String academic = rs.getString(10);
+				String area = rs.getString(11);
+				String workingcondition = rs.getString(12);
+				String deadline = rs.getString(13);
 				
-				RecruitmentVO vo = new RecruitmentVO(company, title, titlelink, site_name, field1
+				RecruitmentVO vo = new RecruitmentVO(total, company, title, titlelink, site_name, field1
 						, field2, field3, career, academic, area, workingcondition, deadline);
 				
 				list.add(vo);

@@ -4,10 +4,10 @@
 <%@page import="java.util.ArrayList" %>
 
 <%
-   RecruitmentDAO dao = RecruitmentDAO.getInstance();
-   ArrayList<RecruitmentVO> list = dao.listRecruitment();
+	RecruitmentDAO dao = RecruitmentDAO.getInstance();
+	ArrayList<RecruitmentVO> list = dao.listRecruitment();
    
-   pageContext.setAttribute("list", list);
+	pageContext.setAttribute("list", list);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +39,17 @@
     color: #303030;
     font-weight: 400;
     margin-bottom: 30px;
-  }  
+  }
+  a {
+  	text-decoration:none;
+  	color: #818181;
+  }
+  a:hover, a:visited {
+  	color: #818181;
+  	text-decoration:none;
+  }
   .jumbotron {
-    background-color: #f4511e;
+    background-color: #000000;
     color: #fff;
     padding: 100px 25px;
     font-family: 'Gelasio', 'Nanum Myeongjo', serif;
@@ -51,14 +59,6 @@
   }
   .bg-grey {
     background-color: #f6f6f6;
-  }
-  .logo-small {
-    color: #f4511e;
-    font-size: 50px;
-  }
-  .logo {
-    color: #f4511e;
-    font-size: 200px;
   }
   .thumbnail {
     padding: 0 0 15px 0;
@@ -70,67 +70,9 @@
     height: 100%;
     margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #f4511e;
-  }
-  .carousel-indicators li {
-    border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-    background-color: #f4511e;
-  }
-  .item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
-  }
-  .item span {
-    font-style: normal;
-  }
-  .panel {
-    border: 1px solid #f4511e; 
-    border-radius:0 !important;
-    transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-    border: 1px solid #f4511e;
-    background-color: #fff !important;
-    color: #f4511e;
-  }
-  .panel-heading {
-    color: #fff !important;
-    background-color: #f4511e !important;
-    padding: 25px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-    background-color: white !important;
-  }
-  .panel-footer h3 {
-    font-size: 32px;
-  }
-  .panel-footer h4 {
-    color: #aaa;
-    font-size: 14px;
-  }
-  .panel-footer .btn {
-    margin: 15px 0;
-    background-color: #f4511e;
-    color: #fff;
-  }
   .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: #000000;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -143,7 +85,7 @@
     color: #fff !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
+    color: #000000 !important;
     background-color: #fff !important;
   }
   .navbar-default .navbar-toggle {
@@ -153,7 +95,7 @@
   footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #f4511e;
+    color: #000000;
   }
   .slideanim {visibility:hidden;}
   .slide {
@@ -193,11 +135,6 @@
       margin-bottom: 35px;
     }
   }
-  @media screen and (max-width: 480px) {
-    .logo {
-      font-size: 150px;
-    }
-  }
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -227,7 +164,7 @@
   <p>잡코리아, 인크루트에 올라온 최신 공고들을 스크레이핑해서 하나의 페이지에서 보여드립니다.</p> 
   <form name="frm" id="frm" method="get" action="Search_Jobcruit.jsp">
       <input type="text" name="search_keyword" size="100" id="search_keyword" placeholder="회사명 혹은 타이틀명으로 검색 가능합니다." required />
-      <button class="btn btn-danger">검색</button>
+      <button class="btn btn-default">검색</button>
   </form>
 </div>
 
@@ -241,20 +178,20 @@
     <table class="table table-hover">
     <thead>
       <tr>
-        <th>회사명</th>
-        <th>제목</th>
+        <th width=100px>회사명</th>
+        <th width=500px>제목</th>
         <th>사이트명</th>
-        <th>분야1</th>
+        <th width=300px>분야1</th>
         <th>분야2</th>
         <th>분야3</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>${li.company }</td>
-        <td><a href="${li.titlelink }" target="_blank" style="text-decoration:none">${li.title }</a></td>
+        <td width=100px>${li.company }</td>
+        <td width=500px><a class="title" href="${li.titlelink }" target="_blank">${li.title }</a></td>
         <td>${li.site_name }</td>
-        <td>${li.field1 }</td>
+        <td width=300px>${li.field1 }</td>
         <td>${li.field2 }</td>
         <td>${li.field3 }</td>
       </tr>

@@ -3,7 +3,8 @@ package naram.kim.recruit.model;
 import java.sql.Date;
 
 public class RecruitmentVO {
-
+	
+	private int total;
 	private String company;
 	private String title;
 	private String titlelink;
@@ -20,6 +21,26 @@ public class RecruitmentVO {
 	public RecruitmentVO() { // 생성자
 		
 	}
+	
+	public RecruitmentVO(int total, String company, String title, String titlelink, String site_name, String field1, String field2, String field3
+			, String career, String academic, String area, String workingcondition, String deadline) {
+		super();
+		
+		this.total = total;
+		this.company = company;
+		this.title = title;
+		this.titlelink = titlelink;
+		this.site_name = site_name;
+		this.field1 = field1;
+		this.field2 = field2;
+		this.field3 = field3;
+		this.career = career;
+		this.academic = academic;
+		this.area = area;
+		this.workingcondition = workingcondition;
+		this.deadline = deadline;
+		
+	} // 생성자
 	
 	public RecruitmentVO(String company, String title, String titlelink, String site_name, String field1, String field2, String field3
 			, String career, String academic, String area, String workingcondition, String deadline) {
@@ -39,6 +60,14 @@ public class RecruitmentVO {
 		this.deadline = deadline;
 		
 	} // 생성자
+	
+	public int getTotal() {
+		return total;
+	}
+	
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	
 	public String getCompany() {
 		return company;
