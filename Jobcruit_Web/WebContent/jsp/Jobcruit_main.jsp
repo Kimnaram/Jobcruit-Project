@@ -33,7 +33,7 @@
 	int block = 10;
 	
 	System.out.println("전체 페이지 수 : "+allPage);
-	System.out.println("현재 페이지 :"+page_num);
+	System.out.println("현재 페이지 : "+page_num);
 	
 	int startPage = ((pg - 1) / block * block) + 1;
 	int endPage = ((pg - 1) / block * block + block);
@@ -213,7 +213,6 @@
   for (int i = 0; i < list.size(); i++) {
 	  RecruitmentVO r = list.get(i);
   %>
-  <!--<c:forEach var="li" items="${list }">-->
     <table class="table table-hover">
     <thead>
       <tr>
@@ -231,8 +230,8 @@
         <td width=500px><a class="title" href="<%=r.getTitlelink()%>" target="_blank"><%=r.getTitle()%></a></td>
         <td><%=r.getSite_name()%></td>
         <td width=300px><%=r.getField1()%></td>
-        <td><%=r.getField2()%></td>
-        <td><%=r.getField3()%></td>
+        <td><% if(r.getField2() != null) { r.getField2(); }%></td>
+        <td><% if(r.getField3() != null) { r.getField3(); }%></td>
       </tr>
     </tbody>
     <thead>
@@ -253,7 +252,6 @@
     </tr>
     </tbody>
   </table>
-  <!--</c:forEach>-->
   <%
   }
   %>

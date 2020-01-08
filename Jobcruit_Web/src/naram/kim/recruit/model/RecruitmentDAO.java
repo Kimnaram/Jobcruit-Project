@@ -38,7 +38,7 @@ public class RecruitmentDAO {
 		
 		ArrayList<RecruitmentVO> list = new ArrayList<>();
 		
-		String sql = "select * from re_info where id >= ? and id >= ?";
+		String sql = "select * from re_info where id >= ? and id <= ?";
 		
 		try {
 			
